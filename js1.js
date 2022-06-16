@@ -1,0 +1,17 @@
+var a=10;
+alert(a);
+document.write(a);
+var s1=parseInt(prompt());
+var s2=parseInt(prompt());
+var s=s1+s2;
+var su= s1-s2;
+var m= s1*s2;
+var d= s1/s2;
+alert(s);
+document.write(s);
+alert(su);
+document.write(su);
+alert(m);
+document.write(m);
+alert(d);
+document.write(d);

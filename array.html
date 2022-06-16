@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <script>
+        var array=["Akash", "Deep", "Santanu", "Krishanu", "Tina"];
+        for (let i = 0; i < array.length; i++) {
+            document.write(array[i]);
+            document.write("<br>");
+        }
+        array.sort();
+        document.write(array);
+        document.write("<br>");
+        document.write("Length is: "+array.length);
+        document.write("<br>");
+        array.push("Arjun");
+        document.write(array);
+        document.write("<br>");
+        array.pop();
+        document.write(array);
+        document.write("<br>");
+        array.shift();
+        document.write(array);
+        document.write("<br>");
+        array.unshift("Arjun");
+        document.write(array);
+        document.write("<br>");
+        document.write("<br>");
+
+
+        var num=new Array(1,2,3,4,5);
+        for (let i = 0; i < num.length; i++) {
+            document.write(num[i]);
+            document.write("<br>");
+        }
+        document.write(array.concat(num));
+
+    </script>
+</body>
+</html>
