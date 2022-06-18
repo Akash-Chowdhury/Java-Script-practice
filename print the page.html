@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>print div</title>
+</head>
+<body>
+    <div id="one">
+        This is div 1
+        <button onclick="myfunc('one')">Click me</button>
+    </div>
+    <div id="two">
+        This is div 2
+        <button onclick="myfunc('two')">Click me</button>
+    </div>
+    <div id="three">
+        This is div 3
+        <button onclick="myfunc('three')">Click me</button>
+    </div>
+    <button onclick="mywhole()">For whole page Click me</button>
+    <script>
+        function mywhole()
+        {
+            window.print();
+        }
+        function myfunc(value)
+        {
+            var backup=document.body.innerHTML;
+            var divcontent= document.getElementById(value).innerHTML;
+            document.body.innerHTML=divcontent;
+            window.print();
+            document.body.innerHTML=backup;
+        }
+    </script>
+</body>
+</html>
