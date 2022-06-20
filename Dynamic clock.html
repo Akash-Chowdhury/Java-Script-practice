@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic clock</title>
+</head>
+<body>
+    <button onclick="myfunc()">Click me</button>
+    <p id="clock"></p>
+    <script>
+        var time=setInterval(clocktiming,1000);
+        function clocktiming()
+        {
+            var d=new Date();
+            var a=d.toLocaleTimeString();
+            document.getElementById('clock').innerHTML=a;
+        }
+        var a;
+        function myfunc()
+        {
+            if(a==1)
+            {
+                document.getElementById("clock").style.display="block";
+                return a=0;
+            }
+            else
+            {
+                document.getElementById("clock").style.display="none";
+                return a=1;
+            }
+        }
+    </script>
+</body>
+</html>
