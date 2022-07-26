@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>covid19 api</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            background-color: blue;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        .container{
+            text-align: center;
+            align-items: center;
+            color: white;
+            margin-top: 30px;
+        }
+        .container h2{
+            border-bottom: 1px solid grey;
+        }
+        .container p{
+            text-align: center;
+            align-items: center;
+            margin: 7px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Covid19 Tracker</h2>
+        <p id="apiindia"></p>
+        <p id="apicase"></p>
+        <p id="apideath"></p>
+        <p id="apirecover"></p>
+        <p id="apicase1"></p>
+        <p id="apideath2"></p>
+        <p id="apirecover3"></p>
+    </div>
+    <script>
+        fetch('https://api.covid19api.com/summary')
+            .then((apidata) => {
+                console.log(apidata);
+                return apidata.json();
+            })
+            .then((actualdata) => {
+                console.log(actualdata.Countries[77]);
+                const mydata = actualdata.Countries[77].Country;
+                document.getElementById('apiindia').innerHTML = `The name of the country is : ${mydata}`;
+
+                const newcase = actualdata.Countries[77].NewConfirmed;
+                document.getElementById('apicase').innerHTML = `Total new cases : ${newcase}`;
+
+                const newdeath = actualdata.Countries[77].NewDeaths;
+                document.getElementById('apideath').innerHTML = `Total new deaths : ${newdeath}`;
+
+                const newrecover = actualdata.Countries[77].NewRecovered;
+                document.getElementById('apirecover').innerHTML = `Total new recovered : ${newrecover}`;
+
+                const newcase1 = actualdata.Countries[77].TotalConfirmed;
+                document.getElementById('apicase1').innerHTML = `Overall cases : ${newcase1}`;
+
+                const newdeath2 = actualdata.Countries[77].TotalDeaths;
+                document.getElementById('apideath2').innerHTML = `Overall Deaths : ${newdeath2}`;
+
+                const newrecover3 = actualdata.Countries[77].TotalRecovered;
+                document.getElementById('apirecover3').innerHTML = `Overall recovered : ${newrecover3}`;
+            });
+
+    </script>
+</body>
+
+</html>
